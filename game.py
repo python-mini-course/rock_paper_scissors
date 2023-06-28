@@ -64,6 +64,26 @@ while running:
                 #computer choice
                 computerChoice = whatIsIt(generateComputerChoice())
                 userChoice = whatIsIt(int(key))
+
+                # print tie if user and computer respose is the same
+                if userChoice == computerChoice:
+                    tied = True
+                else: 
+                    if userChoice == "Rock":
+                        if computerChoice == "Scissors":
+                            won = True
+                        if computerChoice == "Paper":
+                            lost = True
+                    elif userChoice == "Scissors":
+                        if computerChoice == "Paper":
+                            won = True
+                        if computerChoice == "Rock":
+                            lost = True
+                    elif userChoice == "Paper":
+                        if computerChoice == "Rock":
+                            won = True
+                        if computerChoice == "Scissors":
+                            lost = True
             
                 # update the screen
                 pygame.display.flip()
@@ -75,8 +95,12 @@ while running:
     Display.blit(title, (400, 100))
 
     # Computer Text
+    computerText = FONT.render("Computer", True, BLACK)
+    Display.blit(computerText, (100, 500))
 
     # User Text
+    userText = FONT.render("User", True, BLACK)
+    Display.blit(userText, (800, 500))
 
 
     # Game Completed

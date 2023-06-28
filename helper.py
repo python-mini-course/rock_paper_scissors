@@ -2,7 +2,7 @@
 import random
 
 def whatIsIt(num):
-  choices = ["Rock", "Scissors", "Paper"]
+  choices = ["Rock", "Paper", "Scissors"]
   return choices[num - 1]
 
 #gives back 0-2 at random
